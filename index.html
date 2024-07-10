@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Apply JavaScript example</title>
+    <script>
+        function createParagraph() { //呼び出される関数
+            const para = document.createElement("p"); //動的にpタグを生成し変数paraで扱う
+            para.textContent = "ボタンが押されました！"; //pタグの文字列を生成
+            document.body.appendChild(para); //bodyの内部にpタグを付け加える
+        }
+    </script>
+</head>
+<body>
+    <button>押してください１</button>
+    <button>押してください２</button>
+    <script>
+        const buttons = document.querySelectorAll("button"); //buttonが定義済であること
+        for (const button of buttons) {
+            button.addEventListener("click", createParagraph); //関数が定義済であること
+        }
+    </script>
+</body>
+</html>
